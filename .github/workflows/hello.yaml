@@ -3,9 +3,17 @@ name: First Workflow
 on: push
 
 jobs:
-  pwd:
+  run_app:
     runs-on: ubuntu-latest
     steps:
 
-     - name: pwd
-       run: pwd
+     - name: checkout repository
+       uses: actions/checkout@v4
+
+     - name: setup python
+       uses: actions/setup-python@v5
+       with:
+         python-version: 3.12
+         
+     - name: run application
+       run: python app.py
