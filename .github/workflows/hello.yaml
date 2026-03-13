@@ -5,7 +5,13 @@ on: push
 jobs:
   uptime:
     runs-on: ubuntu-latest
-
     steps:
-      - name: uptime
-        run: uptime
+
+     - name: List files before checkout
+       run: ls -la
+
+     - name: Checkout repo
+       uses: actions/checkout@v4
+
+     - name: List files after checkout
+       run: ls -la
