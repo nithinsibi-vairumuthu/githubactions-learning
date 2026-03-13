@@ -1,19 +1,22 @@
-name: First Workflow
+name: Docker CI Pipeline
 
 on: push
 
 jobs:
-  run_app:
+  docker-build:
+
     runs-on: ubuntu-latest
+
     steps:
 
-     - name: checkout repository
-       uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-     - name: setup python
-       uses: actions/setup-python@v5
-       with:
-         python-version: 3.12
-         
-     - name: run application
-       run: python app.py
+      - name: Build Docker Image
+        run: docker build -t my-python-app .
+
+      - name: Show Docker Images
+        run: docker images
+
+      - name: Run Container
+        run: docker run my-python-app
