@@ -7,5 +7,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        run: echo "Hello from GitHub Actions"
+      - name: Who am I?
+        run: whoami
+
+      - name: OS
+        run: uname -a
+
+      - name: disk space
+        run: df -h
+
+      - name: List files
+        run: ls -la
+
+      - name: ram
+        run: free -h
+
+      - name: cpu info
+        run: lscpu
