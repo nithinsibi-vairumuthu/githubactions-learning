@@ -3,15 +3,9 @@ name: First Workflow
 on: push
 
 jobs:
-  uptime:
+  pwd:
     runs-on: ubuntu-latest
     steps:
 
-     - name: List files before checkout
-       run: ls -la
-
-     - name: Checkout repo
-       uses: actions/checkout@v4
-
-     - name: List files after checkout
-       run: ls -la
+     - name: pwd
+       run: pwd
