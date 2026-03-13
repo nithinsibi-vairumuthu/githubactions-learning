@@ -3,24 +3,9 @@ name: First Workflow
 on: push
 
 jobs:
-  hello:
+  uptime:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Who am I?
-        run: whoami
-
-      - name: OS
-        run: uname -a
-
-      - name: disk space
-        run: df -h
-
-      - name: List files
-        run: ls -la
-
-      - name: ram
-        run: free -h
-
-      - name: cpu info
-        run: lscpu
+      - name: uptime
+        run: uptime
